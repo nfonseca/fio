@@ -6,17 +6,17 @@ norandommap
 time_based=1
 group_reporting
 invalidate=1
-disable_lat=1
+disable_lat=0
 disable_slat=1
 disable_clat=1
 clat_percentiles=0
 
-iodepth=1
+iodepth=2
 iodepth_batch=1
 thread=1
 numjobs=1
 
-runtime=300
+runtime=120
 #
 # In case of 'scramble_buffers=1', the source buffer
 # is rewritten with a random value every write operations.
@@ -56,11 +56,39 @@ cpus_allowed_policy=split
 # as iostat will not provide useful data.
 #
 
-[libpmem-seqwrite0]
-rw=write
+[job0]
+rw=randread
 directory=/mnt/pmem0
 
 
-[libpmem-seqwrite1]
-rw=write
+[job1]
+rw=randread
 directory=/mnt/pmem1
+
+
+[job2]
+rw=randread
+directory=/mnt/pmem2
+
+[job3]
+rw=randread
+directory=/mnt/pmem3
+
+
+[job4]
+rw=randread
+directory=/mnt/pmem4
+
+
+[job5]
+rw=randread
+directory=/mnt/pmem5
+
+[job6]
+rw=randread
+directory=/mnt/pmem6
+
+
+[job7]
+rw=randread
+directory=/mnt/pmem7
